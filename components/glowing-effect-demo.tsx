@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { Infinity, Cpu, TrendingUp, ShieldCheck, HeartHandshake } from "lucide-react";
+import { Infinity as InfinityIcon, Cpu, TrendingUp, ShieldCheck, HeartHandshake } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { cn } from "@/lib/utils";
 
@@ -54,7 +54,7 @@ export default function GlowingEffectDemo() {
           
           <GridItem
             area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-            icon={<Infinity className="h-5 w-5" />}
+            icon={<InfinityIcon className="h-5 w-5" />}
             title="End-to-End Development"
             description="From concept and planning to deployment and support, we manage the complete development lifecycle under one roof."
           />
