@@ -18,8 +18,45 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://queryholic.in"),
   title: "Queryholic | Engineering The Future",
   description: "Engineering The Future Through Software, Electronics & Intelligence. We build intelligent digital and engineering solutions.",
+  keywords: ["Software Development", "Electronics", "Artificial Intelligence", "IoT", "Engineering", "Queryholic", "Tech Agency"],
+  authors: [{ name: "Queryholic" }],
+  creator: "Queryholic",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://queryholic.in",
+    title: "Queryholic | Engineering The Future",
+    description: "Engineering The Future Through Software, Electronics & Intelligence. We build intelligent digital and engineering solutions.",
+    siteName: "Queryholic",
+    images: [
+      {
+        url: "https://res.cloudinary.com/drqsvwrjt/image/upload/v1769694504/queryholic_profile-removebg-preview_azlcg4.png",
+        width: 1200,
+        height: 630,
+        alt: "Queryholic - Engineering The Future",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Queryholic | Engineering The Future",
+    description: "Engineering The Future Through Software, Electronics & Intelligence.",
+    images: ["https://res.cloudinary.com/drqsvwrjt/image/upload/v1769694504/queryholic_profile-removebg-preview_azlcg4.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: "https://res.cloudinary.com/drqsvwrjt/image/upload/v1769694504/queryholic_profile-removebg-preview_azlcg4.png",
     apple: "https://res.cloudinary.com/drqsvwrjt/image/upload/v1769694504/queryholic_profile-removebg-preview_azlcg4.png",
