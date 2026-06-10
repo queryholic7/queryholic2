@@ -16,10 +16,7 @@ import {
   IconBrandDocker,
   IconDatabase,
   IconLink,
-  IconCpu,
-  IconNetwork,
   IconPalette,
-  IconCircuitry, // If available, otherwise we fallback
 } from "@tabler/icons-react";
 import { Cpu, Microchip, Server, Activity } from "lucide-react";
 
