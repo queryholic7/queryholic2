@@ -10,7 +10,7 @@ export function WhatsappButton() {
       href="https://wa.me/919597733152?text=Hello%20Queryholic!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you." 
       target="_blank" 
       rel="noopener noreferrer"
-      className="group fixed bottom-6 right-6 z-50 flex items-center gap-3 hover:-translate-y-1 transition-transform duration-300"
+      className="group fixed bottom-24 md:bottom-6 right-6 z-50 flex items-center gap-3 hover:-translate-y-1 transition-transform duration-300"
       aria-label="Chat on WhatsApp"
     >
       <span className="font-semibold text-sm md:text-base text-neutral-800 dark:text-neutral-200 drop-shadow-sm">Chat with us</span>

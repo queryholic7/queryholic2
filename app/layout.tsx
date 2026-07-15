@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/components/ui/footer";
 import { WhatsappButton } from "@/components/ui/whatsapp-button";
+import { MobileBottomNav } from "@/components/ui/mobile-bottom-nav";
 
 const ibmPlexSans = IBM_Plex_Sans({subsets:['latin'],variable:'--font-sans'});
 
@@ -75,11 +76,12 @@ export default function RootLayout({
       className={cn("dark h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", ibmPlexSans.variable)}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">
-        <main className="flex-1">
+        <main className="flex-1 pb-16 md:pb-0">
           {children}
         </main>
         <Footer />
         <WhatsappButton />
+        <MobileBottomNav />
       </body>
     </html>
   );
