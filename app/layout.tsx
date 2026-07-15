@@ -58,8 +58,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "https://res.cloudinary.com/drqsvwrjt/image/upload/v1769694504/queryholic_profile-removebg-preview_azlcg4.png",
-    apple: "https://res.cloudinary.com/drqsvwrjt/image/upload/v1769694504/queryholic_profile-removebg-preview_azlcg4.png",
+    icon: "https://res.cloudinary.com/drqsvwrjt/image/upload/v1770208225/queryholic_pro_txcp6w.jpg",
+    shortcut: "https://res.cloudinary.com/drqsvwrjt/image/upload/v1770208225/queryholic_pro_txcp6w.jpg",
+    apple: "https://res.cloudinary.com/drqsvwrjt/image/upload/v1770208225/queryholic_pro_txcp6w.jpg",
   },
 };
 
