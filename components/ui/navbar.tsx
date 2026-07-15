@@ -76,11 +76,13 @@ export function Navbar({ logoSrc = "https://res.cloudinary.com/drqsvwrjt/image/u
 
           <div className="navbar-actions flex items-center gap-4 md:gap-8">
             <ThemeToggle />
-            <Button 
-              className="hidden md:flex rounded-full bg-black dark:bg-white text-white dark:text-black hover:scale-[1.02] hover:opacity-90 transition-all duration-300 px-6 font-medium text-sm tracking-wide shadow-sm"
-            >
-              Get Started
-            </Button>
+            <Link href="/contact">
+              <Button 
+                className="hidden md:flex rounded-full bg-black dark:bg-white text-white dark:text-black hover:scale-[1.02] hover:opacity-90 transition-all duration-300 px-6 font-medium text-sm tracking-wide shadow-sm"
+              >
+                Get Started
+              </Button>
+            </Link>
             
             {/* Mobile Menu Toggle */}
             <button 
@@ -122,10 +124,12 @@ export function Navbar({ logoSrc = "https://res.cloudinary.com/drqsvwrjt/image/u
                 </motion.div>
               ))}
             </nav>
-            <div className="mt-auto pb-8">
-              <Button className="w-full h-14 text-base tracking-widest uppercase rounded-full" onClick={() => setIsMobileMenuOpen(false)}>
-                Get Quotes
-              </Button>
+            <div className="mt-auto pb-8 w-full">
+              <Link href="/contact" className="w-full block">
+                <Button className="w-full h-14 text-base tracking-widest uppercase rounded-full" onClick={() => setIsMobileMenuOpen(false)}>
+                  Get Quotes
+                </Button>
+              </Link>
             </div>
           </motion.div>
         )}

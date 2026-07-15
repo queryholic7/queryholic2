@@ -30,7 +30,7 @@ export default function AboutUsSection() {
   ];
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden bg-background">
+    <section className="relative py-20 md:py-32 overflow-hidden bg-slate-50/80 dark:bg-[#0a0a0a] border-y border-slate-200/60 dark:border-neutral-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-start max-w-5xl mx-auto">
           

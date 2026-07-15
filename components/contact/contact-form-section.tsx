@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Mail, MapPin, Clock, ArrowRight, CheckCircle2, AlertCircle, ChevronDown } from "lucide-react";
+import { countryCodes } from "@/lib/country-codes";
 
 const services = [
   "Website Development",
@@ -24,6 +25,7 @@ export default function ContactFormSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    countryCode: "+91",
     phone: "",
     company: "",
     service: "",
@@ -35,6 +37,7 @@ export default function ContactFormSection() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
+  const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -47,10 +50,14 @@ export default function ContactFormSection() {
     setError(null);
 
     try {
+      const dataToSubmit = {
+        ...formData,
+        phone: `${formData.countryCode} ${formData.phone}`,
+      };
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(dataToSubmit),
       });
 
       const data = await response.json();
@@ -68,12 +75,12 @@ export default function ContactFormSection() {
   };
 
   return (
-    <section className="relative w-full py-24 md:py-32 bg-[#F9F9FB] dark:bg-[#030303]">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+    <section className="relative w-full pt-28 pb-16 md:pt-36 md:pb-24 bg-[#F9F9FB] dark:bg-[#030303]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 gap-12 lg:gap-16">
           
           {/* Left Column: Contact Info & Why Us */}
-          <div className="lg:col-span-5 flex flex-col space-y-16">
+          <div className="lg:col-span-5 flex flex-col space-y-12 md:space-y-16">
             
             {/* Contact Information */}
             <motion.div
@@ -82,33 +89,33 @@ export default function ContactFormSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-2xl font-medium tracking-tight text-neutral-900 dark:text-white mb-8">
+              <h3 className="text-2xl font-medium tracking-tight text-neutral-900 dark:text-white mb-6 md:mb-8">
                 Get in touch
               </h3>
-              <div className="space-y-8">
-                <div className="flex items-start space-x-5">
+              <div className="space-y-6 md:space-y-8">
+                <div className="flex items-start space-x-4 md:space-x-5">
                   <Mail className="w-5 h-5 text-neutral-400 dark:text-neutral-500 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-neutral-900 dark:text-neutral-300 mb-1">Email</p>
-                    <a href="mailto:queryholic@gmail.com" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors">
+                    <a href="mailto:queryholic@gmail.com" className="text-sm md:text-base text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors">
                       queryholic@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-5">
+                <div className="flex items-start space-x-4 md:space-x-5">
                   <MapPin className="w-5 h-5 text-neutral-400 dark:text-neutral-500 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-neutral-900 dark:text-neutral-300 mb-1">Location</p>
-                    <p className="text-neutral-500">Tamil Nadu, India</p>
+                    <p className="text-sm md:text-base text-neutral-500">Tamil Nadu, India</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-5">
+                <div className="flex items-start space-x-4 md:space-x-5">
                   <Clock className="w-5 h-5 text-neutral-400 dark:text-neutral-500 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-neutral-900 dark:text-neutral-300 mb-1">Availability</p>
-                    <p className="text-neutral-500">Monday – Saturday<br/>9:00 AM – 6:00 PM IST</p>
+                    <p className="text-sm md:text-base text-neutral-500">Monday – Saturday<br/>9:00 AM – 6:00 PM IST</p>
                   </div>
                 </div>
               </div>
@@ -121,10 +128,10 @@ export default function ContactFormSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h3 className="text-xl font-medium tracking-tight text-neutral-900 dark:text-white mb-6">
+              <h3 className="text-xl font-medium tracking-tight text-neutral-900 dark:text-white mb-5 md:mb-6">
                 Why Queryholic
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-5 md:space-y-6">
                 <div>
                   <h4 className="text-sm font-semibold text-neutral-900 dark:text-neutral-200">End-to-End Development</h4>
                   <p className="text-sm text-neutral-500 mt-1">From planning and design to deployment and support.</p>
@@ -152,7 +159,7 @@ export default function ContactFormSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-7"
           >
-            <div className="bg-white dark:bg-[#0A0A0A] border border-neutral-200/60 dark:border-neutral-800/60 rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-neutral-200/40 dark:shadow-none relative overflow-hidden">
+            <div className="bg-white dark:bg-[#0A0A0A] border border-neutral-200/60 dark:border-neutral-800/60 rounded-3xl sm:rounded-[2.5rem] p-5 sm:p-8 md:p-12 shadow-2xl shadow-neutral-200/40 dark:shadow-none relative overflow-hidden">
               
               <AnimatePresence mode="wait">
                 {isSuccess ? (
@@ -238,16 +245,65 @@ export default function ContactFormSection() {
                           <label htmlFor="phone" className="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
                             Phone Number
                           </label>
-                          <input
-                            id="phone"
-                            name="phone"
-                            type="tel"
-                            required
-                            value={formData.phone}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-transparent text-neutral-900 dark:text-white focus:ring-1 focus:ring-neutral-900 dark:focus:ring-neutral-400 focus:border-neutral-900 dark:focus:border-neutral-400 outline-none transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-600"
-                            placeholder="+1 (555) 000-0000"
-                          />
+                          <div className="flex gap-2">
+                            <div 
+                              className="relative w-[110px] sm:w-[130px] shrink-0"
+                              tabIndex={0}
+                              onBlur={(e) => {
+                                if (!e.currentTarget.contains(e.relatedTarget)) {
+                                  setIsCountryDropdownOpen(false);
+                                }
+                              }}
+                            >
+                              <div 
+                                className={`w-full px-3 sm:px-4 py-3.5 rounded-xl border flex items-center justify-between cursor-pointer transition-all ${isCountryDropdownOpen ? 'border-neutral-900 dark:border-neutral-400 ring-1 ring-neutral-900 dark:ring-neutral-400 bg-white dark:bg-[#111]' : 'border-neutral-200 dark:border-neutral-800 bg-transparent'} text-neutral-900 dark:text-white`}
+                                onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
+                              >
+                                <span className="text-neutral-900 dark:text-white truncate font-medium text-sm">
+                                  {countryCodes.find(c => c.code === formData.countryCode)?.label || formData.countryCode}
+                                </span>
+                                <ChevronDown className={`w-4 h-4 text-neutral-500 transition-transform duration-300 shrink-0 ml-1 ${isCountryDropdownOpen ? 'rotate-180' : ''}`} />
+                              </div>
+                              
+                              <AnimatePresence>
+                                {isCountryDropdownOpen && (
+                                  <motion.div 
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="absolute z-50 top-full left-0 w-[240px] sm:w-[280px] mt-2 p-2 bg-white dark:bg-[#0F0F0F] border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-xl max-h-60 overflow-y-auto custom-scrollbar"
+                                  >
+                                    {countryCodes
+                                      .sort((a, b) => a.label.localeCompare(b.label))
+                                      .sort((a, b) => (a.code === "+91" ? -1 : b.code === "+91" ? 1 : 0))
+                                      .map((country) => (
+                                      <div 
+                                        key={`${country.label}-${country.code}`}
+                                        onClick={() => {
+                                          setFormData((prev) => ({ ...prev, countryCode: country.code }));
+                                          setIsCountryDropdownOpen(false);
+                                        }}
+                                        className={`px-4 py-2.5 rounded-lg text-sm cursor-pointer transition-colors ${formData.countryCode === country.code ? 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium' : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800'}`}
+                                      >
+                                        {country.label}
+                                      </div>
+                                    ))}
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                            <input
+                              id="phone"
+                              name="phone"
+                              type="tel"
+                              required
+                              value={formData.phone}
+                              onChange={handleChange}
+                              className="w-full flex-1 px-4 py-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-transparent text-neutral-900 dark:text-white focus:ring-1 focus:ring-neutral-900 dark:focus:ring-neutral-400 focus:border-neutral-900 dark:focus:border-neutral-400 outline-none transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-600"
+                              placeholder="98765 43210"
+                            />
+                          </div>
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="company" className="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
@@ -317,16 +373,16 @@ export default function ContactFormSection() {
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="budget" className="text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
-                            Estimated Budget <span className="text-neutral-400/50">(Optional)</span>
+                            Estimated Budget
                           </label>
                           <input
                             id="budget"
                             name="budget"
                             type="text"
+                            required
                             value={formData.budget}
                             onChange={handleChange}
                             className="w-full px-4 py-3.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-transparent text-neutral-900 dark:text-white focus:ring-1 focus:ring-neutral-900 dark:focus:ring-neutral-400 focus:border-neutral-900 dark:focus:border-neutral-400 outline-none transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-600"
-                            placeholder="$10k - $25k"
                           />
                         </div>
                       </div>

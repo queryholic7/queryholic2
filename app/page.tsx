@@ -1,10 +1,12 @@
 import { Navbar } from "@/components/ui/navbar";
 import Hero from "@/components/hero";
 import GlowingEffectDemo from "@/components/glowing-effect-demo";
-import CinematicServices from "@/components/cinematic-services";
-import CinematicProcess from "@/components/cinematic-process";
+import BentoServices from "@/components/bento-services";
+import SimpleProcess from "@/components/simple-process";
 import TechStack from "@/components/tech-stack";
 import AboutUsSection from "@/components/about-us-section";
+
+import Comparison from "@/components/comparison";
 
 export default function Home() {
   return (
@@ -12,8 +14,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <AboutUsSection />
-      <CinematicServices />
-      <CinematicProcess />
+      <BentoServices />
+      <SimpleProcess />
+      <Comparison />
       <TechStack />
       <GlowingEffectDemo />
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
@@ -36,7 +37,7 @@ const images = [
 
 export default function Hero() {
   return (
-    <section id="home" className="relative flex flex-col items-center justify-center overflow-hidden bg-background py-28 md:py-36 w-full text-foreground transition-colors duration-300">
+    <section id="home" className="relative flex flex-col items-center justify-center overflow-hidden bg-white dark:bg-[#030303] py-28 md:py-36 w-full text-foreground transition-colors duration-300">
       {/* Background 3D Marquee component */}
       <div 
         className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none opacity-15 dark:opacity-40 z-0"
@@ -49,7 +50,7 @@ export default function Hero() {
       </div>
 
       {/* Background radial gradients for a premium glow effect */}
-      <div className="absolute inset-0 bg-background pointer-events-none transition-colors duration-300 -z-10" />
+      <div className="absolute inset-0 bg-white dark:bg-[#030303] pointer-events-none transition-colors duration-300 -z-10" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.06),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.12),transparent_50%)] pointer-events-none" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[300px] bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.04),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.08),transparent_60%)] pointer-events-none" />
 
@@ -59,7 +60,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-          className="mt-2 text-center text-[2.75rem] font-medium tracking-tight leading-[1.1] sm:text-6xl md:text-7xl lg:text-[5.5rem] text-foreground"
+          className="mt-2 text-center text-4xl font-medium tracking-tight leading-[1.1] sm:text-6xl md:text-7xl lg:text-[5.5rem] text-foreground"
         >
           Building{" "}
           <span className="bg-gradient-to-r from-indigo-600 via-sky-500 to-cyan-600 dark:from-indigo-300 dark:via-sky-300 dark:to-cyan-300 bg-clip-text text-transparent font-semibold">
@@ -70,7 +71,7 @@ export default function Hero() {
           <span className="bg-gradient-to-r from-indigo-600 via-sky-500 to-cyan-600 dark:from-indigo-300 dark:via-sky-300 dark:to-cyan-300 bg-clip-text text-transparent font-semibold">
             Experiences
           </span>
-          <span className="block mt-4 text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] font-light italic text-neutral-500 dark:text-neutral-400 tracking-tight font-sans">
+          <span className="block mt-4 text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-light italic text-neutral-500 dark:text-neutral-400 tracking-tight font-sans">
             for the Future
           </span>
         </motion.h1>
@@ -93,13 +94,13 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
         >
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-sm font-medium text-background transition-all duration-200 hover:opacity-90 w-full sm:w-auto shadow-lg shadow-black/5 dark:shadow-white/5"
           >
             Start a Project
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </a>
+          </Link>
           <a
             href="#services"
             className="group inline-flex items-center justify-center gap-2 rounded-full border border-neutral-200 dark:border-neutral-800 bg-transparent px-7 py-3.5 text-sm font-medium text-neutral-900 dark:text-white transition-all duration-200 hover:bg-neutral-50 dark:hover:bg-neutral-900 w-full sm:w-auto"
