@@ -54,7 +54,11 @@ export default function ContactFormSection() {
         ...formData,
         phone: `${formData.countryCode} ${formData.phone}`,
       };
-      const response = await fetch("/api/contact", {
+      
+      // When built for mobile, this will use the live website's API
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "/api/contact";
+      
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dataToSubmit),
