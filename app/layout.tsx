@@ -10,6 +10,7 @@ import {
   generateOrganizationSchema,
   generateWebSiteSchema,
   generateLocalBusinessSchema,
+  generateSiteNavigationSchema,
   jsonLdScriptProps,
 } from "@/lib/schema";
 import { Analytics } from "@/components/analytics";
@@ -196,10 +197,11 @@ export default function RootLayout({
           href="/rss.xml"
         />
 
-        {/* JSON-LD Structured Data — Global schemas */}
+        {/* JSON-LD Structured Data — Global schemas & Sitelinks */}
         <script {...jsonLdScriptProps(generateOrganizationSchema())} />
         <script {...jsonLdScriptProps(generateWebSiteSchema())} />
         <script {...jsonLdScriptProps(generateLocalBusinessSchema())} />
+        <script {...jsonLdScriptProps(generateSiteNavigationSchema())} />
       </head>
       <body className="min-h-full flex flex-col overflow-x-hidden">
         <main className="flex-1 pb-16 md:pb-0">

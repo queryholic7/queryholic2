@@ -102,6 +102,62 @@ export function generateWebSiteSchema() {
 }
 
 // -----------------------------------------------------------------------------
+// SiteNavigationElement Schema (Explicitly signals Google Sitelinks)
+// -----------------------------------------------------------------------------
+
+export function generateSiteNavigationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Primary Site Navigation",
+    "itemListElement": [
+      {
+        "@type": "SiteNavigationElement",
+        "position": 1,
+        "name": "Services",
+        "description": "Full-stack web, mobile, custom AI, IoT & embedded technology services.",
+        "url": `${SITE_CONFIG.url}/services`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 2,
+        "name": "About Us",
+        "description": "About Queryholic — our mission, technology leadership and engineering excellence.",
+        "url": `${SITE_CONFIG.url}/about`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 3,
+        "name": "Contact Us",
+        "description": "Get in touch for custom software quotes, technology consultation and inquiries.",
+        "url": `${SITE_CONFIG.url}/contact`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 4,
+        "name": "Industries",
+        "description": "Tailored enterprise solutions across Healthcare, FinTech, Education, Logistics & 18+ sectors.",
+        "url": `${SITE_CONFIG.url}/industries`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 5,
+        "name": "Website Development",
+        "description": "Modern responsive websites, web applications and SaaS platform development.",
+        "url": `${SITE_CONFIG.url}/services/website-development`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 6,
+        "name": "Mobile App Development",
+        "description": "Cross-platform iOS and Android mobile app development for startups & enterprises.",
+        "url": `${SITE_CONFIG.url}/services/mobile-app-development`,
+      },
+    ],
+  };
+}
+
+// -----------------------------------------------------------------------------
 // LocalBusiness Schema
 // -----------------------------------------------------------------------------
 
