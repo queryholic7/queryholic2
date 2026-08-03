@@ -1,13 +1,60 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+function escapeHtml(str: string): string {
+  return String(str || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.RESEND_API_KEY;
-    
+    const body = await req.json().catch(() => null);
+
+    if (!body || typeof body !== "object") {
+      return NextResponse.json({ error: "Invalid request payload" }, { status: 400 });
+    }
+
+    const { name, email, phone, company, service, budget, details } = body;
+
+    // Strict validation
+    if (!name || !email || !phone || !service || !details) {
+      return NextResponse.json(
+        { error: "Missing required fields" },
+        { status: 400 }
+      );
+    }
+
+    if (typeof email !== "string" || !EMAIL_REGEX.test(email.trim())) {
+      return NextResponse.json(
+        { error: "Invalid email address" },
+        { status: 400 }
+      );
+    }
+
+    if (String(details).length > 5000 || String(name).length > 200) {
+      return NextResponse.json(
+        { error: "Field length exceeds allowed limit" },
+        { status: 400 }
+      );
+    }
+
+    const safeName = escapeHtml(String(name).trim());
+    const safeEmail = escapeHtml(String(email).trim());
+    const safePhone = escapeHtml(String(phone).trim());
+    const safeCompany = escapeHtml(String(company || "N/A").trim());
+    const safeService = escapeHtml(String(service).trim());
+    const safeBudget = escapeHtml(String(budget || "N/A").trim());
+    const safeDetails = escapeHtml(String(details).trim());
+
     if (!apiKey) {
       console.warn("⚠️ Missing RESEND_API_KEY. Email sending is bypassed for development mode.");
-      // Return a simulated success response so the frontend UI can proceed without error
       return NextResponse.json(
         { success: true, message: "Simulated success (Missing API Key)" },
         { status: 200 }
@@ -15,16 +62,6 @@ export async function POST(req: Request) {
     }
 
     const resend = new Resend(apiKey);
-    const body = await req.json();
-    const { name, email, phone, company, service, budget, details } = body;
-
-    // Simple validation
-    if (!name || !email || !phone || !service || !details) {
-      return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 }
-      );
-    }
 
     // Compose the email HTML
     const htmlContent = `
@@ -35,34 +72,34 @@ export async function POST(req: Request) {
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
           <tr style="border-bottom: 1px solid #eaeaea;">
             <td style="padding: 10px 0; font-weight: bold; width: 30%;">Name:</td>
-            <td style="padding: 10px 0;">${name}</td>
+            <td style="padding: 10px 0;">${safeName}</td>
           </tr>
           <tr style="border-bottom: 1px solid #eaeaea;">
             <td style="padding: 10px 0; font-weight: bold;">Email:</td>
-            <td style="padding: 10px 0;"><a href="mailto:${email}">${email}</a></td>
+            <td style="padding: 10px 0;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
           </tr>
           <tr style="border-bottom: 1px solid #eaeaea;">
             <td style="padding: 10px 0; font-weight: bold;">Phone:</td>
-            <td style="padding: 10px 0;">${phone}</td>
+            <td style="padding: 10px 0;">${safePhone}</td>
           </tr>
           <tr style="border-bottom: 1px solid #eaeaea;">
             <td style="padding: 10px 0; font-weight: bold;">Company:</td>
-            <td style="padding: 10px 0;">${company || "N/A"}</td>
+            <td style="padding: 10px 0;">${safeCompany}</td>
           </tr>
           <tr style="border-bottom: 1px solid #eaeaea;">
             <td style="padding: 10px 0; font-weight: bold;">Service Required:</td>
-            <td style="padding: 10px 0;">${service}</td>
+            <td style="padding: 10px 0;">${safeService}</td>
           </tr>
           <tr style="border-bottom: 1px solid #eaeaea;">
             <td style="padding: 10px 0; font-weight: bold;">Estimated Budget:</td>
-            <td style="padding: 10px 0;">${budget || "N/A"}</td>
+            <td style="padding: 10px 0;">${safeBudget}</td>
           </tr>
         </table>
         
         <div style="margin-top: 30px;">
           <h3 style="color: #1a1a1a; margin-bottom: 10px;">Project Details:</h3>
           <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; color: #333; line-height: 1.5; white-space: pre-wrap;">
-            ${details}
+            ${safeDetails}
           </div>
         </div>
         

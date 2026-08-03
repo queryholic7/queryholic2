@@ -1,8 +1,16 @@
 "use client";
 
-import React from "react";
+import dynamic from "next/dynamic";
 import { motion } from "motion/react";
-import Globe3DDemo from "@/components/3d-globe-demo";
+
+const Globe3DDemo = dynamic(() => import("@/components/3d-globe-demo"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center bg-neutral-100/50 dark:bg-neutral-900/50">
+      <div className="w-24 h-24 rounded-full border-2 border-indigo-500/20 border-t-indigo-500 animate-spin" />
+    </div>
+  ),
+});
 
 export default function OurStory() {
   return (

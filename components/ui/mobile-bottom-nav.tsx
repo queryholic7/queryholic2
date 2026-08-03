@@ -54,7 +54,7 @@ export function MobileBottomNav() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background/95 backdrop-blur-lg border-t border-border pb-safe">
-      <nav className="flex items-center justify-around px-2 py-2">
+      <nav className="flex items-center justify-around px-2 py-1.5">
         {navItems.map((item) => {
           const isActive = getIsActive(item.href)
           const Icon = item.icon
@@ -70,20 +70,20 @@ export function MobileBottomNav() {
                   setActiveHash("")
                 }
               }}
-              className="flex flex-col items-center justify-center w-16 gap-1"
+              className="flex flex-col items-center justify-center w-16"
             >
               <div
                 className={cn(
-                  "flex flex-col items-center justify-center p-2 rounded-2xl transition-all duration-300 w-full",
+                  "flex flex-col items-center justify-center py-1.5 px-2 rounded-xl transition-all duration-300 w-full",
                   isActive 
                     ? "bg-primary/10 text-primary" 
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                <Icon size={22} className={cn("mb-1", isActive ? "stroke-[2.5px]" : "stroke-2")} />
+                <Icon size={20} className={cn("mb-1", isActive ? "stroke-[2.3px]" : "stroke-2")} />
                 <span className={cn(
                   "text-[10px] font-medium tracking-wide",
-                  isActive ? "text-primary" : "text-muted-foreground"
+                  isActive ? "text-primary font-semibold" : "text-muted-foreground"
                 )}>
                   {item.label}
                 </span>

@@ -1,0 +1,383 @@
+// =============================================================================
+// Queryholic — Industry Catalog Data
+// =============================================================================
+// Data for all programmatic industry-specific pages.
+// Each entry generates a unique /industries/[slug] page with full SEO.
+// =============================================================================
+
+export interface IndustryData {
+  slug: string;
+  title: string;
+  headline: string;
+  description: string;
+  metaDescription: string;
+  keywords: string[];
+  solutions: { title: string; description: string }[];
+  faqs: { question: string; answer: string }[];
+  relatedServiceSlugs: string[];
+}
+
+export const INDUSTRIES_DATA: IndustryData[] = [
+  {
+    slug: "healthcare",
+    title: "Healthcare Software Development",
+    headline: "Software Solutions for Healthcare & Medical",
+    description: "We build HIPAA-aware healthcare software including hospital management systems, clinic appointment booking platforms, medical mobile apps, patient portals, and telemedicine solutions.",
+    metaDescription: "Healthcare software development company. Hospital website development, clinic management software, medical appointment booking, healthcare CRM, and telemedicine solutions.",
+    keywords: ["Hospital Website Development", "Healthcare Software Development", "Clinic Management Software", "Medical Appointment Booking", "Healthcare CRM Development", "Healthcare Mobile App Development"],
+    solutions: [
+      { title: "Hospital Management Systems", description: "Comprehensive HMS with patient records, billing, pharmacy, and lab management." },
+      { title: "Appointment Booking", description: "Online appointment scheduling with automated reminders and calendar sync." },
+      { title: "Telemedicine Platforms", description: "Video consultation, e-prescriptions, and remote patient monitoring." },
+      { title: "Patient Portals", description: "Secure patient access to medical records, reports, and communication." },
+      { title: "Healthcare CRM", description: "Patient relationship management with follow-up automation and analytics." },
+      { title: "Medical Mobile Apps", description: "Patient-facing and staff-facing mobile applications for healthcare workflows." },
+    ],
+    faqs: [
+      { question: "Do you build HIPAA-compliant software?", answer: "We build software following healthcare data security best practices. For full HIPAA compliance, we work with compliance consultants to ensure all regulatory requirements are met." },
+      { question: "Can you build a hospital management system?", answer: "Yes, we build complete HMS solutions including patient registration, appointment management, billing, pharmacy, lab results, and administrative dashboards." },
+    ],
+    relatedServiceSlugs: ["web-application-development", "mobile-app-development", "software-development"],
+  },
+  {
+    slug: "education",
+    title: "Education Software Development",
+    headline: "Software Solutions for Education & E-Learning",
+    description: "We build powerful education technology platforms including school websites, learning management systems (LMS), online course platforms, education ERPs, and student portals.",
+    metaDescription: "Education software development company. School website development, LMS development, online learning platforms, education ERP, and college website services.",
+    keywords: ["School Website Development", "College Website Development", "LMS Development", "Online Learning Platform Development", "Education ERP Software Development", "Education App Development"],
+    solutions: [
+      { title: "School & College Websites", description: "Modern, informative websites with admissions, events, and parent portals." },
+      { title: "Learning Management Systems", description: "Full-featured LMS with courses, quizzes, certificates, and progress tracking." },
+      { title: "Education ERP", description: "Student management, attendance, grading, fee collection, and reporting." },
+      { title: "Online Course Platforms", description: "Video-based learning with live classes, assignments, and discussion forums." },
+      { title: "Student Mobile Apps", description: "Mobile access to schedules, grades, assignments, and notifications." },
+      { title: "Exam & Assessment Tools", description: "Online examination systems with proctoring and automated grading." },
+    ],
+    faqs: [
+      { question: "Can you build an LMS like Udemy?", answer: "Yes, we build custom LMS platforms with course creation tools, video hosting, quizzes, certificates, payment integration, and analytics dashboards." },
+      { question: "Do you develop school management software?", answer: "Yes, we build complete school ERP systems including student management, attendance tracking, grade management, fee collection, and parent communication." },
+    ],
+    relatedServiceSlugs: ["web-application-development", "mobile-app-development", "ui-ux-design"],
+  },
+  {
+    slug: "logistics",
+    title: "Logistics Software Development",
+    headline: "Software Solutions for Logistics & Supply Chain",
+    description: "We build logistics and supply chain software including fleet management systems, warehouse management platforms, shipping company websites, route optimization tools, and tracking dashboards.",
+    metaDescription: "Logistics software development company. Fleet management, warehouse management, shipping company website development, logistics ERP, and supply chain solutions.",
+    keywords: ["Logistics Website Development", "Shipping Company Website Development", "Fleet Management Software", "Warehouse Management System", "Logistics ERP Development", "Supply Chain Software"],
+    solutions: [
+      { title: "Fleet Management", description: "Real-time vehicle tracking, driver management, fuel monitoring, and route optimization." },
+      { title: "Warehouse Management", description: "Inventory tracking, pick-pack-ship workflows, and barcode/QR scanning." },
+      { title: "Shipping Portals", description: "Customer-facing shipment tracking, rate calculators, and booking platforms." },
+      { title: "Route Optimization", description: "AI-powered route planning for fuel efficiency and on-time deliveries." },
+      { title: "Logistics ERP", description: "End-to-end supply chain management with procurement, orders, and invoicing." },
+      { title: "Driver Apps", description: "Mobile apps for drivers with navigation, delivery confirmation, and reporting." },
+    ],
+    faqs: [
+      { question: "Can you build a shipment tracking system?", answer: "Yes, we build real-time shipment tracking systems with GPS integration, status updates, customer notifications, and analytics dashboards." },
+    ],
+    relatedServiceSlugs: ["web-application-development", "mobile-app-development", "iot-development"],
+  },
+  {
+    slug: "real-estate",
+    title: "Real Estate Software Development",
+    headline: "Software Solutions for Real Estate & Property",
+    description: "We build real estate technology platforms including property listing websites, real estate CRM systems, property management software, virtual tour integrations, and real estate mobile apps.",
+    metaDescription: "Real estate website development company. Property listing website, real estate CRM, property management software, and real estate mobile app development.",
+    keywords: ["Real Estate Website Development", "Property Listing Website Development", "Real Estate CRM Development", "Real Estate Mobile App Development", "Property Management Software"],
+    solutions: [
+      { title: "Property Listing Portals", description: "Searchable property listings with maps, filters, virtual tours, and lead capture." },
+      { title: "Real Estate CRM", description: "Lead management, property matching, follow-up automation, and deal tracking." },
+      { title: "Property Management", description: "Tenant management, rent collection, maintenance requests, and financial reporting." },
+      { title: "Virtual Tours", description: "360° virtual property tours integrated into your website and mobile app." },
+      { title: "Agent Portals", description: "Agent dashboards with listings, leads, commission tracking, and performance analytics." },
+      { title: "Mobile Apps", description: "Property search apps with push notifications for new listings matching criteria." },
+    ],
+    faqs: [
+      { question: "Can you build a property listing website like 99acres?", answer: "Yes, we build custom property listing platforms with search filters, map integration, virtual tours, agent profiles, and lead management." },
+    ],
+    relatedServiceSlugs: ["website-development", "web-application-development", "mobile-app-development"],
+  },
+  {
+    slug: "restaurants",
+    title: "Restaurant Software Development",
+    headline: "Software Solutions for Restaurants & Food Service",
+    description: "We build restaurant technology solutions including food ordering websites, QR menu systems, restaurant mobile apps, POS software, kitchen management systems, and delivery management platforms.",
+    metaDescription: "Restaurant website development company. Food ordering website, QR menu, restaurant mobile app, POS software, and online ordering system development.",
+    keywords: ["Restaurant Website Development", "Food Ordering Website Development", "Restaurant Mobile App Development", "QR Menu Website Development", "Restaurant POS Software"],
+    solutions: [
+      { title: "Online Ordering", description: "Custom food ordering platforms with menu management, customization, and payment." },
+      { title: "QR Code Menus", description: "Digital menus accessible via QR codes for contactless dining." },
+      { title: "Restaurant Websites", description: "Visually stunning websites with menus, reservations, gallery, and location." },
+      { title: "POS Systems", description: "Point-of-sale software with order management, billing, and inventory tracking." },
+      { title: "Delivery Management", description: "Delivery tracking, driver assignment, and real-time order status updates." },
+      { title: "Mobile Apps", description: "Customer ordering apps with loyalty programs and push notifications." },
+    ],
+    faqs: [
+      { question: "Can you build a food ordering app like Swiggy?", answer: "Yes, we build custom food ordering and delivery platforms with restaurant management, customer apps, driver apps, and admin dashboards." },
+    ],
+    relatedServiceSlugs: ["website-development", "mobile-app-development", "ecommerce-development"],
+  },
+  {
+    slug: "fitness",
+    title: "Fitness Software Development",
+    headline: "Software Solutions for Fitness & Wellness",
+    description: "We build fitness technology platforms including gym management software, fitness mobile apps, personal trainer websites, gym membership management systems, and fitness booking platforms.",
+    metaDescription: "Gym and fitness software development company. Gym website development, fitness app development, gym membership management, and personal trainer website development.",
+    keywords: ["Gym Website Development", "Fitness App Development", "Gym Membership Management Software", "Personal Trainer Website Development", "Fitness Booking Platform"],
+    solutions: [
+      { title: "Gym Management", description: "Member management, attendance tracking, class scheduling, and payment processing." },
+      { title: "Fitness Apps", description: "Workout tracking, diet planning, progress photos, and goal setting." },
+      { title: "Gym Websites", description: "Modern websites with class schedules, trainer profiles, and online joining." },
+      { title: "Booking Systems", description: "Class and session booking with capacity management and waitlists." },
+      { title: "Trainer Portals", description: "Client management, workout plan creation, and progress monitoring." },
+      { title: "Wearable Integration", description: "Integration with fitness trackers and smartwatches for data sync." },
+    ],
+    faqs: [
+      { question: "Can you build a gym management system?", answer: "Yes, we build complete gym management systems with member registration, attendance, billing, class scheduling, trainer management, and analytics." },
+    ],
+    relatedServiceSlugs: ["website-development", "mobile-app-development", "web-application-development"],
+  },
+  {
+    slug: "finance",
+    title: "FinTech Software Development",
+    headline: "Software Solutions for Finance & Banking",
+    description: "We build fintech solutions including accounting software, loan management systems, financial dashboards, payment platforms, and banking software with security and compliance in mind.",
+    metaDescription: "FinTech software development company. Banking software, loan management systems, accounting software, financial dashboard development, and payment platform solutions.",
+    keywords: ["FinTech Software Development", "Banking Software Development", "Loan Management System", "Accounting Software Development", "Financial Dashboard Development"],
+    solutions: [
+      { title: "Accounting Software", description: "Bookkeeping, invoicing, GST/tax management, and financial reporting." },
+      { title: "Loan Management", description: "Loan origination, EMI calculation, repayment tracking, and default management." },
+      { title: "Financial Dashboards", description: "Real-time financial analytics, KPIs, cash flow, and P&L visualization." },
+      { title: "Payment Platforms", description: "Secure payment processing, recurring billing, and multi-currency support." },
+      { title: "Expense Management", description: "Employee expense tracking, approval workflows, and reimbursement." },
+      { title: "Investment Platforms", description: "Portfolio management, mutual fund tracking, and investment analytics." },
+    ],
+    faqs: [
+      { question: "Do you ensure financial data security?", answer: "Yes, we implement encryption at rest and in transit, secure authentication, audit logging, and follow financial software security best practices." },
+    ],
+    relatedServiceSlugs: ["software-development", "web-application-development", "mobile-app-development"],
+  },
+  {
+    slug: "manufacturing",
+    title: "Manufacturing Software Development",
+    headline: "Software Solutions for Manufacturing & Industry",
+    description: "We build manufacturing software including production planning systems, manufacturing ERP, inventory management, quality control dashboards, and factory floor monitoring platforms.",
+    metaDescription: "Manufacturing ERP development company. Factory management software, inventory management, production planning, manufacturing dashboard, and quality control systems.",
+    keywords: ["Manufacturing ERP Development", "Factory Management Software", "Inventory Management Software", "Production Planning Software", "Manufacturing Dashboard Development"],
+    solutions: [
+      { title: "Manufacturing ERP", description: "Complete enterprise resource planning with procurement, production, and sales." },
+      { title: "Production Planning", description: "Work order management, scheduling, resource allocation, and capacity planning." },
+      { title: "Inventory Management", description: "Real-time stock tracking, reorder points, batch tracking, and warehouse management." },
+      { title: "Quality Control", description: "QC checklists, inspection management, and defect tracking dashboards." },
+      { title: "Factory Monitoring", description: "IoT-connected factory floor monitoring with machine status and output tracking." },
+      { title: "Supply Chain", description: "Vendor management, purchase orders, GRN, and supplier performance analytics." },
+    ],
+    faqs: [
+      { question: "Can you build a custom ERP for manufacturing?", answer: "Yes, we build industry-specific ERP solutions tailored to manufacturing processes including bill of materials, production scheduling, and quality management." },
+    ],
+    relatedServiceSlugs: ["software-development", "iot-development", "embedded-systems"],
+  },
+  {
+    slug: "hospitality",
+    title: "Hospitality Software Development",
+    headline: "Software Solutions for Hotels & Hospitality",
+    description: "We build hospitality technology including hotel booking websites, property management systems, reservation engines, guest experience apps, and revenue management tools.",
+    metaDescription: "Hotel booking website development company. Hotel management software, reservation systems, guest apps, and hospitality technology solutions for hotels and resorts.",
+    keywords: ["Hotel Booking Website", "Hotel Management Software", "Hospitality Software Development", "Hotel Reservation System", "Guest Experience App"],
+    solutions: [
+      { title: "Booking Engines", description: "Direct booking systems with room availability, pricing, and payment processing." },
+      { title: "Property Management", description: "Front desk management, housekeeping, check-in/out, and billing." },
+      { title: "Hotel Websites", description: "Visually stunning hotel websites with gallery, virtual tours, and booking." },
+      { title: "Guest Apps", description: "Mobile apps for room service, concierge requests, and local recommendations." },
+      { title: "Revenue Management", description: "Dynamic pricing, occupancy analytics, and revenue optimization." },
+      { title: "Channel Management", description: "Integration with OTAs like Booking.com, Expedia, and Airbnb." },
+    ],
+    faqs: [
+      { question: "Can you build a hotel booking website?", answer: "Yes, we build custom hotel booking websites with room inventory management, dynamic pricing, secure payments, and guest management." },
+    ],
+    relatedServiceSlugs: ["website-development", "web-application-development", "mobile-app-development"],
+  },
+  {
+    slug: "travel",
+    title: "Travel Software Development",
+    headline: "Software Solutions for Travel & Tourism",
+    description: "We build travel technology platforms including travel booking websites, tour management systems, itinerary planners, travel agency software, and tourism mobile apps.",
+    metaDescription: "Travel website development company. Tour booking platforms, travel agency software, itinerary planners, and tourism mobile app development services.",
+    keywords: ["Travel Website Development", "Tour Booking Platform", "Travel Agency Software", "Tourism App Development", "Travel Booking Website"],
+    solutions: [
+      { title: "Tour Booking Platforms", description: "Online tour and package booking with itinerary management and payments." },
+      { title: "Travel Websites", description: "Destination showcases with tour packages, reviews, and booking integration." },
+      { title: "Itinerary Planning", description: "AI-powered trip planning with activity suggestions and schedule optimization." },
+      { title: "Agency Management", description: "B2B and B2C portals for travel agencies with supplier and customer management." },
+      { title: "Mobile Apps", description: "Travel companion apps with offline maps, guides, and booking management." },
+      { title: "Review Systems", description: "Verified review and rating systems for tours and destinations." },
+    ],
+    faqs: [
+      { question: "Can you build a travel booking platform?", answer: "Yes, we build complete travel booking platforms with tour listings, availability management, payment processing, and customer portals." },
+    ],
+    relatedServiceSlugs: ["website-development", "mobile-app-development", "ecommerce-development"],
+  },
+  {
+    slug: "jewellery",
+    title: "Jewellery E-Commerce Development",
+    headline: "E-Commerce Solutions for Jewellery Stores",
+    description: "We build premium e-commerce websites for jewellery brands with high-quality product photography integration, gold rate tracking, try-on features, and secure payment processing.",
+    metaDescription: "Jewellery website development company. Premium e-commerce websites for jewellery stores with gold rate integration, virtual try-on, and secure online store development.",
+    keywords: ["Jewellery Website Development", "Jewellery E-Commerce Development", "Jewellery Store Website", "Gold Jewellery Website", "Online Jewellery Store"],
+    solutions: [
+      { title: "E-Commerce Stores", description: "Premium online jewellery stores with product photography and secure checkout." },
+      { title: "Gold Rate Integration", description: "Live gold and silver rate integration with automatic price updates." },
+      { title: "Virtual Try-On", description: "AR-based virtual jewellery try-on for enhanced shopping experience." },
+      { title: "Catalog Management", description: "Categorized catalogs with filters for metal, stone, weight, and collection." },
+      { title: "Custom Orders", description: "Custom jewellery design request forms with specification management." },
+      { title: "Mobile Apps", description: "Jewellery shopping apps with wishlists, notifications, and loyalty programs." },
+    ],
+    faqs: [
+      { question: "Can you integrate live gold rates?", answer: "Yes, we integrate live gold and silver rate APIs that automatically update product prices based on current market rates." },
+    ],
+    relatedServiceSlugs: ["ecommerce-development", "website-development", "mobile-app-development"],
+  },
+  {
+    slug: "construction",
+    title: "Construction Software Development",
+    headline: "Software Solutions for Construction & Contracting",
+    description: "We build construction technology platforms including project management tools, construction company websites, bid management systems, and site progress tracking dashboards.",
+    metaDescription: "Construction company website development. Project management software, bid management, site progress tracking, and construction industry digital solutions.",
+    keywords: ["Construction Company Website", "Construction Software Development", "Construction Project Management", "Construction Company Website Development"],
+    solutions: [
+      { title: "Company Websites", description: "Professional construction company websites with portfolio, projects, and leads." },
+      { title: "Project Management", description: "Construction project tracking with Gantt charts, milestones, and budgets." },
+      { title: "Bid Management", description: "Tender tracking, cost estimation, and bid submission management." },
+      { title: "Site Monitoring", description: "Photo-documented progress tracking with daily/weekly site reports." },
+      { title: "Resource Planning", description: "Material tracking, equipment allocation, and workforce management." },
+      { title: "Safety Compliance", description: "Safety inspection checklists, incident reporting, and compliance tracking." },
+    ],
+    faqs: [
+      { question: "Do you build websites for construction companies?", answer: "Yes, we build professional construction company websites showcasing projects, services, team, testimonials, and lead generation forms." },
+    ],
+    relatedServiceSlugs: ["website-development", "web-application-development", "mobile-app-development"],
+  },
+  {
+    slug: "ngo",
+    title: "NGO Website Development",
+    headline: "Website & Software Solutions for NGOs",
+    description: "We build impactful websites and management tools for NGOs and non-profit organizations, including donation platforms, volunteer management, impact dashboards, and campaign pages.",
+    metaDescription: "NGO website development company. Non-profit websites, donation platforms, volunteer management, impact reporting, and NGO software solutions in India.",
+    keywords: ["NGO Website Development", "Non-Profit Website Development", "NGO Software", "Donation Platform Development", "Volunteer Management Software"],
+    solutions: [
+      { title: "NGO Websites", description: "Mission-driven websites with campaigns, stories, impact metrics, and donation." },
+      { title: "Donation Platforms", description: "Secure donation processing with recurring donations and tax receipts." },
+      { title: "Volunteer Management", description: "Volunteer registration, task assignment, and hour tracking." },
+      { title: "Impact Dashboards", description: "Visual dashboards showing beneficiary reach, project outcomes, and fund utilization." },
+      { title: "Campaign Pages", description: "Fundraising campaign pages with progress bars, social sharing, and updates." },
+      { title: "Beneficiary Tracking", description: "Database of beneficiaries with demographic data and program enrollment." },
+    ],
+    faqs: [
+      { question: "Do you offer discounted rates for NGOs?", answer: "Yes, we offer special pricing for registered non-profit organizations. Contact us to discuss your project and budget." },
+    ],
+    relatedServiceSlugs: ["website-development", "web-application-development", "ui-ux-design"],
+  },
+  {
+    slug: "law",
+    title: "Law Firm Website Development",
+    headline: "Website & Software Solutions for Law Firms",
+    description: "We build professional websites and practice management tools for law firms and legal practices, including case management, client portals, appointment scheduling, and legal document management.",
+    metaDescription: "Law firm website development company. Professional legal websites, case management software, client portals, and legal practice management solutions.",
+    keywords: ["Law Firm Website Development", "Legal Website Development", "Case Management Software", "Law Firm Software", "Legal Practice Management"],
+    solutions: [
+      { title: "Law Firm Websites", description: "Authoritative websites with practice areas, attorney profiles, and client reviews." },
+      { title: "Case Management", description: "Case tracking, document management, deadline reminders, and billing." },
+      { title: "Client Portals", description: "Secure client access to case updates, documents, and communication." },
+      { title: "Appointment Scheduling", description: "Online consultation booking with availability management." },
+      { title: "Document Management", description: "Secure document storage, versioning, and e-signature integration." },
+      { title: "Billing & Invoicing", description: "Time tracking, invoicing, trust accounting, and payment processing." },
+    ],
+    faqs: [
+      { question: "Can you build a professional law firm website?", answer: "Yes, we build authoritative law firm websites that establish credibility, showcase expertise, and generate leads through compelling design and SEO." },
+    ],
+    relatedServiceSlugs: ["website-development", "web-application-development", "seo-digital-marketing"],
+  },
+  {
+    slug: "salon",
+    title: "Salon & Spa Website Development",
+    headline: "Software Solutions for Salons & Spas",
+    description: "We build beautiful websites and booking systems for salons, spas, and beauty studios with appointment scheduling, service catalogs, and client management.",
+    metaDescription: "Salon website development company. Beauty salon websites, spa booking systems, appointment scheduling, and salon management software development.",
+    keywords: ["Salon Website Development", "Spa Website Development", "Salon Booking System", "Beauty Salon Website", "Salon Management Software"],
+    solutions: [
+      { title: "Salon Websites", description: "Visually stunning websites showcasing services, pricing, gallery, and team." },
+      { title: "Online Booking", description: "Appointment scheduling with stylist selection, time slots, and reminders." },
+      { title: "Client Management", description: "Client profiles, visit history, preferences, and loyalty programs." },
+      { title: "Service Catalog", description: "Interactive service menu with pricing, duration, and add-on options." },
+      { title: "POS & Billing", description: "Point-of-sale with service billing, product sales, and tip management." },
+      { title: "Marketing", description: "Email/SMS campaigns, review collection, and social media integration." },
+    ],
+    faqs: [
+      { question: "Can you build a salon booking website?", answer: "Yes, we build salon websites with integrated online booking, stylist profiles, service menus, gallery, and client management features." },
+    ],
+    relatedServiceSlugs: ["website-development", "mobile-app-development", "ui-ux-design"],
+  },
+  {
+    slug: "interior-design",
+    title: "Interior Design Website Development",
+    headline: "Website Solutions for Interior Designers",
+    description: "We build portfolio websites and project management tools for interior designers and architecture firms with stunning visual galleries, project showcases, and lead generation.",
+    metaDescription: "Interior design website development company. Portfolio websites for interior designers, project showcase, client portals, and design firm digital solutions.",
+    keywords: ["Interior Design Website Development", "Interior Designer Website", "Design Portfolio Website", "Architecture Firm Website"],
+    solutions: [
+      { title: "Portfolio Websites", description: "Visually rich portfolio websites with project galleries and case studies." },
+      { title: "Project Showcases", description: "Before/after comparisons, room tours, and detailed project breakdowns." },
+      { title: "Client Portals", description: "Mood boards, material selection, project updates, and approval workflows." },
+      { title: "Lead Generation", description: "Consultation booking, project inquiry forms, and qualification flows." },
+      { title: "Blog & Content", description: "Design inspiration blogs with SEO optimization for organic traffic." },
+      { title: "Social Integration", description: "Instagram and Pinterest feed integration for design inspiration." },
+    ],
+    faqs: [
+      { question: "Can you build a portfolio website for my design firm?", answer: "Yes, we build stunning portfolio websites that showcase your design projects with high-quality imagery, case studies, and client testimonials." },
+    ],
+    relatedServiceSlugs: ["website-development", "ui-ux-design", "seo-digital-marketing"],
+  },
+  {
+    slug: "automotive",
+    title: "Automotive Software Development",
+    headline: "Software Solutions for Automotive Industry",
+    description: "We build automotive technology solutions including car dealership websites, vehicle management systems, service booking platforms, and automotive mobile applications.",
+    metaDescription: "Automotive website development company. Car dealership websites, vehicle management systems, service booking, and automotive industry software solutions.",
+    keywords: ["Automotive Website Development", "Car Dealership Website", "Vehicle Management Software", "Automotive Software Development"],
+    solutions: [
+      { title: "Dealership Websites", description: "Inventory-driven car dealership websites with search, comparison, and financing." },
+      { title: "Vehicle Management", description: "Fleet and inventory management with VIN tracking and valuation." },
+      { title: "Service Booking", description: "Online service appointment booking with maintenance reminders." },
+      { title: "CRM for Auto", description: "Lead management, test drive scheduling, and follow-up automation." },
+      { title: "Marketplace Platforms", description: "Car buying/selling marketplaces with listings, auctions, and financing." },
+      { title: "Mobile Apps", description: "Dealership apps with vehicle browsing, AR features, and service booking." },
+    ],
+    faqs: [
+      { question: "Can you build a car dealership website?", answer: "Yes, we build modern car dealership websites with vehicle inventory management, search filters, comparison tools, and lead generation." },
+    ],
+    relatedServiceSlugs: ["website-development", "ecommerce-development", "mobile-app-development"],
+  },
+  {
+    slug: "retail",
+    title: "Retail Software Development",
+    headline: "Software Solutions for Retail & Commerce",
+    description: "We build retail technology solutions including POS systems, inventory management, customer loyalty platforms, and omnichannel commerce solutions for retail businesses.",
+    metaDescription: "Retail software development company. POS systems, inventory management, loyalty programs, and omnichannel commerce solutions for retail businesses.",
+    keywords: ["Retail Software Development", "POS System Development", "Retail Inventory Management", "Customer Loyalty Platform", "Omnichannel Commerce"],
+    solutions: [
+      { title: "POS Systems", description: "Cloud-based point-of-sale with inventory sync, billing, and analytics." },
+      { title: "Inventory Management", description: "Multi-location inventory tracking with automated reordering." },
+      { title: "Loyalty Programs", description: "Points-based loyalty systems with rewards, tiers, and promotions." },
+      { title: "Omnichannel Commerce", description: "Unified online and offline retail with consistent customer experience." },
+      { title: "Analytics", description: "Sales analytics, customer insights, and demand forecasting." },
+      { title: "Mobile Commerce", description: "Customer-facing shopping apps with personalized recommendations." },
+    ],
+    faqs: [
+      { question: "Can you build a retail POS system?", answer: "Yes, we build cloud-based POS systems with inventory management, customer tracking, billing, and real-time analytics for retail stores." },
+    ],
+    relatedServiceSlugs: ["ecommerce-development", "software-development", "mobile-app-development"],
+  },
+];

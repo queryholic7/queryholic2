@@ -55,10 +55,13 @@ export const ThreeDMarquee = ({
                       }}
                       key={imageIndex + image}
                       src={image}
-                      alt={`Image ${imageIndex + 1}`}
+                      alt={`Innovation showcase preview ${imageIndex + 1}`}
+                      loading="lazy"
+                      decoding="async"
+                      fetchPriority="low"
                       className="aspect-[970/700] rounded-lg object-cover ring ring-gray-950/5 hover:shadow-2xl"
-                      width={970}
-                      height={700}
+                      width={485}
+                      height={350}
                     />
                   </div>
                 ))}

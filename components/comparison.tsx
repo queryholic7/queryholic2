@@ -91,10 +91,7 @@ export default function Comparison() {
             <div className="bg-neutral-50 dark:bg-[#111] p-6 lg:p-8 flex items-center border-r border-neutral-200 dark:border-neutral-800">
               {/* Empty top-left cell */}
             </div>
-            <div className="p-6 lg:p-8 flex items-center space-x-3 border-r border-neutral-200 dark:border-neutral-800 bg-indigo-50/30 dark:bg-indigo-500/5">
-              <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center flex-shrink-0 shadow-md shadow-indigo-500/20">
-                <span className="text-white font-bold text-sm">Q</span>
-              </div>
+            <div className="p-6 lg:p-8 flex items-center border-r border-neutral-200 dark:border-neutral-800 bg-indigo-50/30 dark:bg-indigo-500/5">
               <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400">Queryholic</span>
             </div>
             <div className="p-6 lg:p-8 flex items-center">

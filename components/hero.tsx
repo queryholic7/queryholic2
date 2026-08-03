@@ -7,32 +7,32 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
 
 const images = [
-  "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80", // Microchip
-  "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80", // Server room
-  "https://images.unsplash.com/photo-1517077304055-6e89babf8ee7?auto=format&fit=crop&w=800&q=80", // Circuit board
-  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80", // Earth / Connectivity
-  "https://images.unsplash.com/photo-1518932945647-7a3c96924ab7?auto=format&fit=crop&w=800&q=80", // Robot
-  "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80", // Tech code
-  "https://images.unsplash.com/photo-1531297172866-08eaeb59a1f1?auto=format&fit=crop&w=800&q=80", // Code screen
-  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80", // Data / Tech
-  "https://images.unsplash.com/photo-1593349480506-8433634cb024?auto=format&fit=crop&w=800&q=80", // EV Charger
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80", // Laptop / Coding
-  "https://images.unsplash.com/photo-1555664424-778a1f5e1b48?auto=format&fit=crop&w=800&q=80", // Smart AI
-  "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=800&q=80", // Drone / IoT
-  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80", // Engineering lab
-  "https://images.unsplash.com/photo-1518432031352-d6fc5c10da59?auto=format&fit=crop&w=800&q=80", // Smart energy / Grid
-  "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80", // Tech workspace
-  "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80", // Servers
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80", // Modern architecture / Scale
-  "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=800&q=80", // VR / Future tech
-  "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=800&q=80", // Robotics
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80", // Software team
-  "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80", // IoT Smart Home
-  "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80", // AI Abstract
-  "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=800&q=80", // Network
-  "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?auto=format&fit=crop&w=800&q=80", // Electronics
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80", // Data graphs
-  "https://images.unsplash.com/photo-1553341640-6b28f1e58f09?auto=format&fit=crop&w=800&q=80", // Electric vehicle
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=380&q=50", // Microchip
+  "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=380&q=50", // Server room
+  "https://images.unsplash.com/photo-1517077304055-6e89babf8ee7?auto=format&fit=crop&w=380&q=50", // Circuit board
+  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=380&q=50", // Earth / Connectivity
+  "https://images.unsplash.com/photo-1518932945647-7a3c96924ab7?auto=format&fit=crop&w=380&q=50", // Robot
+  "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=380&q=50", // Tech code
+  "https://images.unsplash.com/photo-1531297172866-08eaeb59a1f1?auto=format&fit=crop&w=380&q=50", // Code screen
+  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=380&q=50", // Data / Tech
+  "https://images.unsplash.com/photo-1593349480506-8433634cb024?auto=format&fit=crop&w=380&q=50", // EV Charger
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=380&q=50", // Laptop / Coding
+  "https://images.unsplash.com/photo-1555664424-778a1f5e1b48?auto=format&fit=crop&w=380&q=50", // Smart AI
+  "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=380&q=50", // Drone / IoT
+  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=380&q=50", // Engineering lab
+  "https://images.unsplash.com/photo-1518432031352-d6fc5c10da59?auto=format&fit=crop&w=380&q=50", // Smart energy / Grid
+  "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=380&q=50", // Tech workspace
+  "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=380&q=50", // Servers
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=380&q=50", // Modern architecture / Scale
+  "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=380&q=50", // VR / Future tech
+  "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=380&q=50", // Robotics
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=380&q=50", // Software team
+  "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=380&q=50", // IoT Smart Home
+  "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=380&q=50", // AI Abstract
+  "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=380&q=50", // Network
+  "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?auto=format&fit=crop&w=380&q=50", // Electronics
+  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=380&q=50", // Data graphs
+  "https://images.unsplash.com/photo-1553341640-6b28f1e58f09?auto=format&fit=crop&w=380&q=50", // Electric vehicle
 ];
 
 export default function Hero() {
