@@ -86,28 +86,33 @@ export function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <Link href="/#services" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                <Link href="/services/website-development" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                   Website Development
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                <Link href="/services/mobile-app-development" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Mobile App Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/ai-automation" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                   AI & Automation
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                <Link href="/services/embedded-systems" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                   Embedded Systems
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                <Link href="/services/iot-solutions" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                   IoT Platforms
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                  Smart Energy Solutions
+                <Link href="/services" className="text-sm text-indigo-600 dark:text-indigo-400 font-medium hover:underline transition-colors">
+                  View All Services &rarr;
                 </Link>
               </li>
             </ul>
@@ -130,15 +135,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#our-process" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                  Our Process
+                <Link href="/industries" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Industries We Serve
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                  Contact
+                  Contact Us
                 </Link>
               </li>
+              
             </ul>
           </div>
 
