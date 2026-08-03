@@ -98,7 +98,7 @@ export const SITE_CONFIG = {
 // Verification tags (add your real IDs when available)
 // =============================================================================
 export const VERIFICATION = {
-  google: "", // Google Search Console verification code
+  google: "HsiTEuJal4BI2hN7qgRxi60Dm4hdIjRwQ7GoB1G-2nI", // Google Search Console verification code
   bing: "", // Bing Webmaster Tools verification code
   yandex: "", // Yandex verification code
   yahoo: "", // Yahoo verification code

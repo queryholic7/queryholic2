@@ -174,6 +174,12 @@ export default function RootLayout({
       className={cn("dark h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", ibmPlexSans.variable)}
     >
       <head>
+        {/* Google Search Console verification */}
+        <meta
+          name="google-site-verification"
+          content="HsiTEuJal4BI2hN7qgRxi60Dm4hdIjRwQ7GoB1G-2nI"
+        />
+
         {/* Preconnect to critical third-party origins */}
         {PRECONNECT_DOMAINS.map((domain) => (
           <link key={domain} rel="preconnect" href={domain} crossOrigin="anonymous" />
